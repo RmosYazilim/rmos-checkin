@@ -1,0 +1,59 @@
+{
+  "IndexPage": {
+    "title": "Online Check-in",
+    "info": "Lütfen bilgilerinizi girerek check-in işlemini tamamlayın",
+    "phone": "Telefon Numaranız",
+    "name": "Adınız",
+    "surname": "Soyadınız",
+    "tc_or_password": "TC yada Pasaport Numaranız",
+    "id_no": "Kimlik Numarası",
+    "id_country": "Uyruk",
+    "id_type": "Belge Türü",
+    "id_adress": "Adres",
+    "id_allergen": "Alerjiler",
+    "id_engelli": "Özel Gereksinimler",
+    "id_medeni": "Medeni Hali",
+    "mother_name": "Anne Adı",
+    "father_name": "Baba Adı",
+    "mail_address": "E-Posta Adresi",
+    "birthday_date": "Doğum Tarihi",
+    "room_no": "Oda Numarası",
+    "married": "Evli",
+    "single": "Bekar",
+
+    "extra_descrip": "Ek Açıklama",
+    "alergy": "Alerjim Var",
+    "medeni_select": "Medeni Durum",
+    "gender_select": "Cinsiyet Seçin",
+    "man": "Erkek",
+    "woman": "Kadın",
+    "no_gender": "Belirtmek İstemiyorum",
+    "save": "Kaydet",
+    "signature": "İmza",
+    "clean": "Temizle",
+    "validation": {
+      "min": "En az 3 karakter olmalı",
+      "required": "Numara gereklidir"
+    }
+  },
+  "LoginPage": {
+    "title": "Online Check-in",
+
+    "voucher": "Voucher",
+    "surname": "Soyadınız",
+    "entry-date": "Giriş Tarihi",
+    "validation": {
+      "min": "En az 3 karakter olmalı",
+      "required": "Numara gereklidir"
+    }
+  },
+
+  "Common": {
+    "language": "Dil"
+  },
+  "Toater": {
+    "errorlogin": "Giriş bilgilerinizi kontrol ediniz",
+    "errorform": "Form Verileri Kontrol ediniz",
+    "success": "işlem başarılı"
+  }
+}

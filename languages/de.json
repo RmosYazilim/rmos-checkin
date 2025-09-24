@@ -1,0 +1,54 @@
+{
+  "IndexPage": {
+    "title": "Online-Einchecken",
+    "info": "Bitte geben Sie Ihre Daten ein, um den Check-in abzuschließen",
+    "phone": "Ihre Telefonnummer",
+    "name": "Ihr Vorname",
+    "surname": "Ihr Nachname",
+    "tc_or_password": "Ihre Ausweis- oder Reisepassnummer",
+    "id_no": "Ausweisnummer",
+    "id_country": "Staatsangehörigkeit",
+    "id_adress": "Adresse",
+    "id_type": "Dokumenttyp",
+    "id_allergen": "Allergien",
+    "id_engelli": "Besondere Anforderungen",
+    "id_medeni": "Familienstand",
+    "mother_name": "Name der Mutter",
+    "father_name": "Name des Vaters",
+    "mail_address": "E-Mail-Adresse",
+    "birthday_date": "Geburtsdatum",
+    "room_no": "Zimmernummer",
+    "married": "Verheiratet",
+    "single": "Ledig",
+
+    "extra_descrip": "Zusätzliche Erklärung",
+    "alergy": "Ich habe Allergien",
+    "medeni_select": "Familienstand auswählen",
+    "gender_select": "Geschlecht auswählen",
+    "man": "Männlich",
+    "woman": "Weiblich",
+    "no_gender": "Möchte ich nicht angeben",
+    "save": "Speichern",
+    "signature": "Unterschrift",
+    "clean": "Löschen",
+    "validation": {
+      "min": "Muss mindestens 3 Zeichen lang sein",
+      "required": "Nummer ist erforderlich"
+    }
+  },
+  "LoginPage": {
+    "title": "Online-Einchecken",
+
+    "voucher": "Gutschein",
+    "surname": "Ihr Nachname",
+    "entry-date": "Anreisedatum",
+    "validation": {
+      "min": "Muss mindestens 3 Zeichen lang sein",
+      "required": "Nummer ist erforderlich"
+    }
+  },
+
+  "Common": {
+    "language": "Sprache"
+  }
+}

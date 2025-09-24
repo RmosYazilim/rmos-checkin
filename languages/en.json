@@ -1,0 +1,52 @@
+{
+  "IndexPage": {
+    "title": "Online Check-in",
+    "info": "Please complete your check-in by entering your information.",
+    "phone": "Your Phone Number",
+    "name": "Your Name",
+    "surname": "Your Surname",
+    "tc_or_password": "Your ID or Passport Number",
+    "id_no": "ID Number",
+    "id_country": "Nationality",
+    "id_adress": "Adress",
+    "id_type": "Document Type",
+    "id_engelli": "Special Needs",
+    "id_allergen": "Allergies",
+
+    "id_medeni": "Marital Status",
+    "mother_name": "Mother's Name",
+    "father_name": "Father's Name",
+    "mail_address": "Email Address",
+    "birthday_date": "Date of Birth",
+    "room_no": "Room Number",
+    "extra_descrip": "Extra Description",
+    "alergy": "I Have Allergy",
+    "medeni_select": "Marital Status",
+    "gender_select": "Select Gender",
+    "married": "Married",
+    "single": "Single",
+    "man": "Man",
+    "woman": "Woman",
+    "no_gender": "Prefer Not to Say",
+    "save": "Save",
+    "signature": "Signature",
+    "clean": "Clear",
+    "validation": {
+      "min": "Must be at least 3 characters",
+      "required": "Number is required"
+    }
+  },
+  "LoginPage": {
+    "voucher": "Voucher",
+    "surname": "Your Surname",
+    "entry-date": "Entry Date",
+    "title": "Online Check-in",
+    "validation": {
+      "min": "Must be at least 3 characters",
+      "required": "Voucher number is required"
+    }
+  },
+  "Common": {
+    "language": "Language"
+  }
+}

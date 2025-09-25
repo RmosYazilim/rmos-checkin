@@ -7,6 +7,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createLoginSchema } from '../types/login-type';
 import { Button } from '@/components/ui/button';
+import { LogIn } from 'lucide-react';
 
 export const LoginVoucher = () => {
   const t = useTranslations('LoginPage');
@@ -47,7 +48,7 @@ export const LoginVoucher = () => {
         />
       </div>
       <Button className=" bg-blue-500 w-full h-15" type="submit">
-        <span className="font-bold text-xl">Giriş Yap</span>
+        <span className="font-bold text-lg">{t('login')}</span>
       </Button>
     </form>
   );

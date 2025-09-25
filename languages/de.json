@@ -38,7 +38,7 @@
   },
   "LoginPage": {
     "title": "Online-Einchecken",
-
+    "login": "Einloggen",
     "voucher": "Gutschein",
     "surname": "Ihr Nachname",
     "entry-date": "Anreisedatum",

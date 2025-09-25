@@ -11,7 +11,7 @@ import * as z from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import { useTranslations } from 'next-intl';
 import { createUserSchema, UserRes } from '../types/user-type';
@@ -26,6 +26,7 @@ import { useToastNotif } from '@/components/toaster/use-toast';
 export const PeopleAccordion = ({ user }: { user: UserRes }) => {
   const { setUpdateCustomer } = useCustomers();
   const { click } = UpdateCustomer();
+  const [canvasReady, setCanvasReady] = useState(false);
   const { showErrorToast } = useToastNotif();
   const searchParams = useSearchParams();
   const guid = searchParams?.get('guid') ?? '';
@@ -36,7 +37,13 @@ export const PeopleAccordion = ({ user }: { user: UserRes }) => {
   type FormData = z.input<typeof userSchema>;
   const allFilledExceptRoom = Object.entries(user || {}).every(
     ([key, value]) => {
-      if (key === 'Odano' || key === 'Ulke_Dilkodu') return true;
+      if (
+        key === 'Odano' ||
+        key === 'Ulke_Dilkodu' ||
+        key === 'AllerjanKodu' ||
+        key === 'Engellikodu'
+      )
+        return true;
       if (value === null) return false;
       if (typeof value === 'string') return value.trim() !== '';
       if (Array.isArray(value)) return value.length > 0;
@@ -60,7 +67,7 @@ export const PeopleAccordion = ({ user }: { user: UserRes }) => {
       ...data,
       Allerjankodu: toCommaString((data as any).Allerjankodu),
       Engellikodu: toCommaString((data as any).Engellikodu),
-      imza: (data as any).imza ?? '',
+      imza: data.imza ?? '',
       Durum: 'CHEKIN',
       voucher: voucher,
       xtip: 2,
@@ -74,7 +81,15 @@ export const PeopleAccordion = ({ user }: { user: UserRes }) => {
     click();
   };
 
-  console.log(user);
+  useEffect(() => {
+    if (sigCanvasRef.current) {
+      if (user.imza) {
+        sigCanvasRef.current.fromDataURL(user.imza);
+      } else {
+        sigCanvasRef.current.clear();
+      }
+    }
+  }, [canvasReady]);
   return (
     <Accordion
       className="bg-white/80 m-3 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-xl shadow-blue-100/50 overflow-hidden"
@@ -358,7 +373,10 @@ export const PeopleAccordion = ({ user }: { user: UserRes }) => {
                     control={control}
                     render={({ field }) => (
                       <SignatureCanvas
-                        ref={sigCanvasRef}
+                        ref={(ref) => {
+                          sigCanvasRef.current = ref;
+                          if (ref && !canvasReady) setCanvasReady(true);
+                        }}
                         onEnd={() =>
                           field.onChange(
                             sigCanvasRef.current?.isEmpty()
@@ -398,7 +416,7 @@ export const PeopleAccordion = ({ user }: { user: UserRes }) => {
               className="w-full  h-16 mt-5"
               variant="outline"
             >
-              Kaydet
+              {t('save')}
             </Button>
           </form>
         </AccordionContent>

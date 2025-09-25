@@ -9,7 +9,7 @@ export const LoginContainer = () => {
 
   return (
     <Suspense fallback={<div>🌸 Loading...</div>}>
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex mt-12 justify-center">
         <div className="container  m-2 justify-center items-center">
           <div className="text-center mb-12">
             <div className="relative inline-block">

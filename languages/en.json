@@ -38,6 +38,7 @@
   },
   "LoginPage": {
     "voucher": "Voucher",
+    "login": "Login",
     "surname": "Your Surname",
     "entry-date": "Entry Date",
     "title": "Online Check-in",

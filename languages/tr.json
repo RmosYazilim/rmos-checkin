@@ -20,7 +20,6 @@
     "room_no": "Oda Numarası",
     "married": "Evli",
     "single": "Bekar",
-
     "extra_descrip": "Ek Açıklama",
     "alergy": "Alerjim Var",
     "medeni_select": "Medeni Durum",
@@ -38,7 +37,7 @@
   },
   "LoginPage": {
     "title": "Online Check-in",
-
+    "login": "Giriş Yap",
     "voucher": "Voucher",
     "surname": "Soyadınız",
     "entry-date": "Giriş Tarihi",

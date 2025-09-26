@@ -53,6 +53,7 @@ export const getCustomers = () => {
       }
     },
     onError: () => {
+      router.push(`/login?guid=${guid}`);
       showErrorToast({ message: '' });
     },
   });

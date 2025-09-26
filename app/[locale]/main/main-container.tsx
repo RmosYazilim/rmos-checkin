@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { PeopleAccordion } from './components/people-accordion';
 import { useCustomers } from './store/usecustomers';
 import { getCustomers } from './query/get-customers';
-import { Suspense, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export default function MainContainer() {
   const { customers } = useCustomers();

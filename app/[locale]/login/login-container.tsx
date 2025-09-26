@@ -4,6 +4,7 @@ import { LoginMenubar } from './components/login-menubar';
 import Image from 'next/image';
 import img from '../assets/main.png';
 import { Suspense } from 'react';
+import { QrScanner } from './components/qr-scanner';
 export const LoginContainer = () => {
   const t = useTranslations('LoginPage');
 
@@ -24,6 +25,7 @@ export const LoginContainer = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4">
               {t('title')}
+              <QrScanner />
             </h1>
           </div>
           <div className="bg-white justify-center shadow-sm border border-gray-200 rounded-xl  p-6 md:p-8 w-full ">

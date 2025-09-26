@@ -393,60 +393,60 @@ export const PeopleAccordion = ({ user }: { user: UserRes }) => {
                 )}
               />
                */}
-                  <div className=" flex flex-col mt-2 items-center justify-start">
-                    <label className="block text-sm font-medium text-gray-700">
-                      {t('signature')}
-                    </label>
-                    <div
-                      className={`w-full mt-1 h-full flex ${errors.imza ? 'bg-red-100 border-2 border-red-300' : ''}`}
-                    >
-                      <Controller
-                        name="imza"
-                        control={control}
-                        render={({ field }) => (
-                          <SignatureCanvas
-                            ref={(ref) => {
-                              sigCanvasRef.current = ref;
-                              if (ref && !canvasReady) setCanvasReady(true);
-                            }}
-                            onEnd={() =>
-                              field.onChange(
-                                sigCanvasRef.current?.isEmpty()
-                                  ? ''
-                                  : sigCanvasRef.current?.toDataURL('image/png')
-                              )
-                            }
-                            canvasProps={{
-                              className:
-                                'sigCanvas mb-3 border border-gray-300 rounded-lg  w-full h-full h-auto',
-                            }}
-                          />
-                        )}
-                      />
-                    </div>
-                    {errors.imza && (
-                      <span className="mt-1 text-red-500">
-                        {errors.imza?.message}
-                      </span>
-                    )}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (sigCanvasRef.current) {
-                          sigCanvasRef.current.clear();
-                        }
-                        // Form alanını da temizle
-                        setValue('imza' as keyof FormData, '' as any, {
-                          shouldDirty: true,
-                          shouldTouch: true,
-                          shouldValidate: true,
-                        });
-                      }}
-                      className="mt-1 px-2 py-1 text-xs bg-gray-200 rounded hover:bg-gray-300"
-                    >
-                      {t('clean')}
-                    </button>
+                </div>
+                <div className=" flex  h-full md:h-[200px] xl:h[150px] flex-col mt-2 items-center justify-start">
+                  <label className="block text-sm font-medium text-gray-700">
+                    {t('signature')}
+                  </label>
+                  <div
+                    className={`w-full mt-1 h-full flex ${errors.imza ? 'bg-red-100 border-2 border-red-300' : ''}`}
+                  >
+                    <Controller
+                      name="imza"
+                      control={control}
+                      render={({ field }) => (
+                        <SignatureCanvas
+                          ref={(ref) => {
+                            sigCanvasRef.current = ref;
+                            if (ref && !canvasReady) setCanvasReady(true);
+                          }}
+                          onEnd={() =>
+                            field.onChange(
+                              sigCanvasRef.current?.isEmpty()
+                                ? ''
+                                : sigCanvasRef.current?.toDataURL('image/png')
+                            )
+                          }
+                          canvasProps={{
+                            className:
+                              'sigCanvas mb-3 border border-gray-300 rounded-lg  w-full h-full h-auto',
+                          }}
+                        />
+                      )}
+                    />
                   </div>
+                  {errors.imza && (
+                    <span className="mt-1 text-red-500">
+                      {errors.imza?.message}
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (sigCanvasRef.current) {
+                        sigCanvasRef.current.clear();
+                      }
+                      // Form alanını da temizle
+                      setValue('imza' as keyof FormData, '' as any, {
+                        shouldDirty: true,
+                        shouldTouch: true,
+                        shouldValidate: true,
+                      });
+                    }}
+                    className="mt-1 px-2 py-1 text-xs bg-gray-200 rounded hover:bg-gray-300"
+                  >
+                    {t('clean')}
+                  </button>
                 </div>
                 <Button
                   type="submit"

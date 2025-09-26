@@ -39,11 +39,13 @@ RUN \
 FROM base AS runner
 WORKDIR /app
 
+ARG NEXT_APP_PUBLIC_URL_ARG
+
 ENV NODE_ENV=production
+ENV NEXT_APP_PUBLIC_URL=${NEXT_APP_PUBLIC_URL_ARG}
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static

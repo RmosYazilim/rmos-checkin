@@ -52,3 +52,4 @@ jobs:
           platforms: linux/amd64
           build-args: |
             NODE_ENV=production
+            NEXT_APP_PUBLIC_URL_ARG=${{vars.NEXT_APP_PUBLIC_URL}}

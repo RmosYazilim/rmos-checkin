@@ -7,6 +7,7 @@ import { useGetToken } from '../../query/get-token';
 import { getCustomers } from './get-customers';
 import { useCustomers } from '../store/usecustomers';
 import { responseType } from '../types/response-type';
+import { ConfettiSideCannons } from '../components/confetti';
 export const UpdateCustomer = () => {
   const { updateCustomer } = useCustomers();
   const { data } = useGetToken();
@@ -29,11 +30,12 @@ export const UpdateCustomer = () => {
     onSuccess: (data: responseType) => {
       if (!data?.isSucceded) {
         if (data?.message) {
-          showErrorToast({ message: '' });
+          showErrorToast({ message: data?.message });
         } else {
-          showErrorToast({ message: '' });
+          showErrorToast({ message: data?.message });
         }
       } else {
+        ConfettiSideCannons();
         showSuccessToast({ message: '' });
         click();
       }

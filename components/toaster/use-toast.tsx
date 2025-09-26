@@ -1,29 +1,22 @@
-import { toast } from 'sonner';
+import Swal from 'sweetalert2';
 
 export function useToastNotif() {
   const showErrorToast = ({ message }: { message: string }) => {
-    toast(message, {
-      description: message,
-      position: 'top-center',
-      duration: 2000,
-      icon: '🚨',
-      style: {
-        background: '#BB0000',
-        color: '#fff',
-      },
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+      footer: '<a href="#">Why do I have this issue?</a>',
     });
   };
 
   const showSuccessToast = ({ message }: { message: string }) => {
-    toast(message, {
-      description: message,
-      position: 'top-center',
-      duration: 2000,
-      icon: '👍',
-      style: {
-        background: '#48BB00',
-        color: '#fff',
-      },
+    Swal.fire({
+      icon: 'success',
+      timer: 1500,
+      timerProgressBar: true,
+      position: 'center',
+      showConfirmButton: false,
     });
   };
 
